@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Products";
+}
+<h2>This is Product page</h2>
+<div class="card-list">      
+      @foreach(var item in Model){
+      <div class="card">
+         <div class="card-image">
+            <img
+               src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/125329317/original/a12d39618eaca59331ee3e0533882fbc99dcba4b/send-my-beautiful-image-jpeg-file-4mb-file-size.jpg"
+               alt="This is a image" />
+         </div>
+         <div class="card-body">
+            <div class="card-title">
+               <h3>@item.Name</h3>
+               <h4>This is category</h4>
+               <p>In Stock</p>
+            </div>
+            <div class="card-prices">
+               <h3>133.33</h3><br />
+               <h4>150</h4>
+            </div>
+         </div>
+      </div>
+      }
+</div>

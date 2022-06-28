@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BulkyBook.Entities.ProductAddModel>
+@{
+    ViewData["title"] = "All Products";
+}
+<h1>All Products 
+    
+<a asp-action="Create"><h4>Add a new Product</h4></a>
+</h1>
+      <!-- public string Name { get; set; } = String.Empty;
+        public string Description { get; set; } = String.Empty;
+        public decimal MarkedPrice { get; set; }
+        public decimal DiscountedPrice { get; set; }
+        public Category Category { get; set; }
+        public Image Image { get; set; }
+        public int Stock { get; set; } -->
+<div class="card-list">      
+      @foreach(var item in Model){
+      <div class="card">
+         <div class="card-image">
+            <img
+               src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/125329317/original/a12d39618eaca59331ee3e0533882fbc99dcba4b/send-my-beautiful-image-jpeg-file-4mb-file-size.jpg"
+               alt="This is a image" />
+         </div>
+         <div class="card-body">
+            <div class="card-title">
+               <h3>@item.Name</h3>
+               <h4>@item.Category</h4>
+               <p>In Stock: @item.Stock</p>
+            </div>
+            <div class="card-prices">
+               <h3>@item.DiscountedPrice</h3><br />
+               <h4>@item.MarkedPrice</h4>
+            </div>
+         </div>
+      </div>
+      }
+</div>

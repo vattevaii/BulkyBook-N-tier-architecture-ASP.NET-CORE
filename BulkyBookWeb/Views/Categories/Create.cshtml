@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Create Category";
+}
+<div class="container border border-1 p-5 bg-dark">
+    <h2>Create New Category for Products</h2>
+
+<form asp-action="create" class="normform">
+    <label>Name : </label>
+    <input placeholder="Category Name" type="text" name="name"/><br />
+    <label>Description : </label>
+    <textarea placeholder="Describe the category, it's constraints and what-not. Figure it out yourself" name="description"></textarea>
+    <input type="submit" value="Create"/>
+</form>
+</div>

@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Create Products";
+}
+<div class="container border border-1 p-5 bg-dark">
+    <h2>Create New Category for Products</h2>
+
+<form asp-action="create" class="normform">
+    <label>Name : </label>
+    <input placeholder="Product Name" type="text" name="name"/><br />
+    <label>Category : </label>
+    <select>
+            @{
+                foreach (var item in Model)
+                {
+                    <option>
+                        @item.Name
+                    </option>
+                }
+            }
+    </select>
+    @*Description = productAddModel.Description,
+                DiscountedPrice = productAddModel.DiscountedPrice,
+                MarkedPrice = productAddModel.MarkedPrice,
+                Stock = productAddModel.Stock,
+                ImageId = image?.Id*@
+     <label>Description : </label>
+    <textarea placeholder="Description" name="description"></textarea><br />
+     <label>MarkedPrice : </label>
+    <input placeholder="199.99" type="number" step="0.01" name="markedPrice" /><br />
+     <label>DiscountedPrice : </label>
+    <input placeholder="189.50" type="number" step="0.01" name="discountedPrice"/><br />
+     <label>Stock : </label>
+    <input placeholder="100" type="number" name="stock"/><br />
+     <label>Image : </label>
+    <input type="file" name="file"/><br />
+     <input type="submit" value="Create"/>
+</form>
+</div>
